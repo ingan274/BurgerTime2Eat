@@ -1,0 +1,35 @@
+{
+  "name": "burger-time-2-eat",
+  "version": "1.0.0",
+  "description": "Order and devour any burger you want!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.19.2",
+    "sequelize": "^5.18.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingan274/BurgerTime2Eat.git"
+  },
+  "keywords": [
+    "Node",
+    "Sequelize",
+    "express",
+    "javascript",
+    "handlebars"
+  ],
+  "author": "Isabel Ngan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ingan274/BurgerTime2Eat/issues"
+  },
+  "homepage": "https://github.com/ingan274/BurgerTime2Eat#readme"
+}
