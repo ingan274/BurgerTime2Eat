@@ -22,6 +22,9 @@ app.set("view engine", "handlebars");
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
+var db = require("./models");
+db.sequelize.sync();
+
 // listen
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
