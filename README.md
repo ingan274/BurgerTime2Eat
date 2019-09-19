@@ -21,7 +21,7 @@ Make sure you have fulfilled the prerequisites above.
 * Copy the schema.sql and seed.sql into Sequal Pro (or anything equivolent)
 * Run `node server.js`
 * Go to `localhost:3000` in your web browser.
-##### Time to EAT!!
+##### Time to EAT AGAIN!!
 <img src="https://media.giphy.com/media/Hs2Miz3n8iIco/giphy.gif">
 
 # Technologies Used
