@@ -1,21 +1,17 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
-
-// Creates a "Chirp" model that matches up with DB
-var burgerTable = sequelize.define("burger", {
-    burger_name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    devoured: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    }
-});
-
-burgerTable.sync();
-
-module.exports = burgerTable;
+module.exports = function (sequelize, DataTypes) {
+    // Creates a "Chirp" model that matches up with DB
+    var burgerTable = sequelize.define("burger", {
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
+    });
+    return burgerTable;
+}
 
 
 // // INTENDED MYSQL TABLE SET UP

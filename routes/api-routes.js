@@ -1,10 +1,10 @@
-var Burger = require("../models");
+var db = require("../models");
 
 module.exports = function (app) {
 
     // API All
     app.get("/api/burgers", function (req, res) {
-        Burger.findAll({}).then(function (results) {
+        db.burgerTable.findAll({}).then(function (results) {
             res.json(results);
         });
     });
@@ -13,7 +13,7 @@ module.exports = function (app) {
     app.post("/api/burgers", function (req, res) {
         burgerName = req.body.burger_name;
         devoured = req.body.devoured;
-        Burger.create({
+        db.burgerTable.create({
             burger_name: burgerName,
             devoured: devoured
         }).then(function (results) {

@@ -1,8 +1,8 @@
-var Burger = require("../models/burger.js");
+var Burger = require("../models");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    Burger.findAll({}).then(function (results) {
+    Burger.burgerTable.findAll({}).then(function (results) {
       var object = {
         burgers: results
       }
