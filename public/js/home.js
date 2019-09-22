@@ -1,23 +1,30 @@
 $(document).on("click", ".eatButton", function () {
-    var burgerId = $(this).data("id");
-    var eaten = $(this).data("eaten");
-    console.log(eaten)
+    event.preventDefault();
+    var newCustomerName = $("#consumer_name").val().trim();
+    if (newCustomerName) {
+        var burgerId = $(this).data("id");
+        var eaten = $(this).data("eaten");
+        console.log(eaten)
 
-    var newEaten = {
-        devoured: eaten
-    };
+        var newEaten = {
+            devoured: eaten,
+            customer_name: newCustomerName
+        };
 
-    $.ajax("/api/burgers/" + burgerId, {
-        method: "PUT",
-        data: newEaten
-    }).then(function () {
-        location.reload();
-    })
+        $.ajax("/api/burgers/" + burgerId, {
+            method: "PUT",
+            data: newEaten
+        }).then(function () {
+            location.reload();
+        })
+    } else {
+        $("#errorCus").text("Please enter your name.");
+    }
 })
 
 
 //Adding Buttons from Search Bar
-$(document).on("click", "#order-button", function(event) {
+$(document).on("click", "#order-button", function (event) {
     event.preventDefault();
     var newBurgerName = $("#burger_name").val().trim();
 
@@ -26,7 +33,7 @@ $(document).on("click", "#order-button", function(event) {
             burger_name: newBurgerName
         }
 
-        $.post("/api/burgers", newBurger, function() {
+        $.post("/api/burgers", newBurger, function () {
             location.reload();
         })
     } else {

@@ -1,9 +1,21 @@
-<p class = "burgers">
-    {{#if devoured}}
-    <button class="eatButton" id="tryBurger" data-id="{{burger_id}}" data-eaten="{{devoured}}">
-        Devour
-    </button>
-    {{else}}
-    {{/if}}
-    {{burger_name}}
-</p>
+{{#if devoured}}
+<div class="row">
+    <p id="errorCus"></p>
+</div>
+<div class="row">
+    <p class="col-6 burgers"> {{dataValues.burger_name}} </p>
+    <form>
+        {{!-- action="/api/burgers" method="POST" --}}
+        <label for="burger_name" id="consumer">Eaten By</label>
+        <input type="text" id="consumer_name" name="consumer_name">
+        <button type="submit" class="eatButton" id="tryBurger" class="btn btn-primary" data-id="{{dataValues.id}}"
+            data-eaten="{{devoured}}">
+            Devour
+        </button>
+    </form>
+</div>
+{{else}}
+<div class="row">
+   <p class="burgers"> {{dataValues.burger_name}} (Eaten by {{dataValues.customer_name}})</p>
+</div>
+{{/if}}

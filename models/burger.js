@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     // Creates a "Chirp" model that matches up with DB
-    var burgerTable = sequelize.define("burger", {
+    var Burger = sequelize.define("burger", {
         burger_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -8,9 +8,15 @@ module.exports = function (sequelize, DataTypes) {
         devoured: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
-        }
+        },
+       customer_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
     });
-    return burgerTable;
+
+    Burger.sync();
+    return Burger;
 }
 
 

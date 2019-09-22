@@ -19,9 +19,9 @@
             <h1 class="menuTitle">Current Menu</h1>
             {{#each burgers}}
             {{!-- if not --}}
-            {{#unless devoured}}
-            {{> menu devoured=true}}
-            {{/unless}}
+                {{#unless dataValues.devoured}}
+                    {{> menu devoured=true}}
+                {{/unless}}
             {{/each}}
 
         </div>
@@ -29,9 +29,9 @@
         <div class="col-4 menuDiv" id="pastMenu">
             <h1 class="menuTitle">Past Menu</h1>
             {{#each burgers}}
-            {{#if devoured}}
-            {{> menu devoured=false}}
-            {{/if}}
+                {{#if dataValues.devoured}}
+                    {{> menu devoured=false}}
+                {{/if}}
             {{/each}}
 
         </div>
