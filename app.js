@@ -1,9 +1,12 @@
 var express = require('express')
-  , routes  = require('./routes')
-  , user    = require('./routes/user')
-  , http    = require('http')
-  , path    = require('path')
-  , db      = require('./models');
+    //   , routes  = require('./routes')
+    //   , user    = require('./routes/user')
+    , http = require('http')
+    , path = require('path')
+    , db = require('./models');
+
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 var app = express();
 
@@ -20,14 +23,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-db.sequelize.sync().then(function() {
-  http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
-  });
+db.sequelize.sync().then(function () {
+    http.createServer(app).listen(app.get('port'), function () {
+        console.log('Express server listening on port ' + app.get('port'));
+    });
 });
