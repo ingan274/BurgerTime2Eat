@@ -5,9 +5,6 @@ var express = require('express')
     , path = require('path')
     , db = require('./models');
 
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
-
 var app = express();
 
 // all environments
@@ -26,8 +23,10 @@ if ('development' === app.get('env')) {
     app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+// app.get('/', routes.index);
+// app.get('/users', user.list);
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 db.sequelize.sync().then(function () {
     http.createServer(app).listen(app.get('port'), function () {
