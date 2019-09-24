@@ -116,7 +116,7 @@ body {
     color: rgba(179, 31, 23);
  }
 
- #consumer_name {
+ .consumer_name {
     width: 100px;
 }
 

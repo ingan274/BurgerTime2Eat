@@ -7,8 +7,8 @@
     <form>
         {{!-- action="/api/burgers" method="POST" --}}
         <label for="burger_name" id="consumer">Eaten By</label>
-        <input type="text" id="consumer_name" name="consumer_name">
-        <button type="submit" class="eatButton" id="tryBurger" class="btn btn-primary" data-id="{{dataValues.id}}"
+        <input type="text" id="consumer_name_{{dataValues.id}}" class="consumer_name" name="consumer_name">
+        <button type="submit" class="eatButton" id="tryBurger{{dataValues.id}}" class="btn btn-primary" data-id="{{dataValues.id}}"
             data-eaten="{{devoured}}">
             Devour
         </button>

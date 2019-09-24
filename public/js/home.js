@@ -1,6 +1,11 @@
+
+
 $(document).on("click", ".eatButton", function () {
     event.preventDefault();
-    var newCustomerName = $("#consumer_name").val().trim();
+    var id = $(this).data("id");
+    // var buttonID = "tryBurger"+id;
+    var customerID = "#consumer_name_"+id;
+    var newCustomerName = $(customerID).val().trim();
     if (newCustomerName) {
         var burgerId = $(this).data("id");
         var eaten = $(this).data("eaten");
